@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Website Informasi Kelurahan Nagritengah, Kecamatan Purwakarta, Kabupaten Purwakarta." />
+  <title>Kelurahan Nagritengah | Kabupaten Purwakarta</title>
+  <style>
+    :root{
+      --primary:#0f6a4b; --primary2:#0b513a; --accent:#f3b61f;
+      --ink:#17302a; --muted:#64766f; --bg:#f5f8f6; --card:#ffffff;
+      --line:#dce7e1; --shadow:0 16px 38px rgba(20,57,45,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1160px,calc(100% - 32px));margin:auto}
+    .topbar{background:var(--primary2);color:#fff;font-size:14px}
+    .topbar .container{display:flex;justify-content:space-between;gap:18px;padding:8px 0;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;min-height:74px;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .seal{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--primary),#1d936d);color:white;border:3px solid #d9efe6;font-weight:900}
+    .brand small{display:block;color:var(--muted);font-weight:600;font-size:12px}
+    .menu{display:flex;gap:22px;font-weight:700;font-size:14px}
+    .menu a:hover{color:var(--primary)}
+    .hero{background:
+      radial-gradient(circle at 85% 15%, rgba(243,182,31,.22), transparent 24%),
+      linear-gradient(135deg,#0d573f,#0f7553 60%,#15906a);
+      color:#fff;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:42px;align-items:center;padding:76px 0}
+    .eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-size:13px;font-weight:800}
+    h1{font-size:clamp(36px,6vw,64px);line-height:1.05;margin:18px 0}
+    .hero p{font-size:18px;color:#e6f5ef;max-width:720px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:800}
+    .btn-primary{background:var(--accent);color:#2b2a18}
+    .btn-light{background:#fff;color:var(--primary2)}
+    .hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:24px;padding:24px;box-shadow:0 24px 60px rgba(0,0,0,.16)}
+    .hero-card h3{margin-top:0}
+    .quick{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .quick div{background:rgba(255,255,255,.10);border-radius:16px;padding:14px}
+    .quick b{display:block;font-size:22px}
+    section{padding:72px 0}
+    .section-head{max-width:760px;margin-bottom:30px}
+    .kicker{color:var(--primary);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+    h2{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:8px 0 10px}
+    .lead{color:var(--muted);font-size:17px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .stat,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+    .stat .n{font-size:34px;font-weight:900;color:var(--primary);line-height:1}
+    .stat .label{margin-top:9px;color:var(--muted);font-weight:700}
+    .note{margin-top:16px;color:var(--muted);font-size:13px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service .icon{width:46px;height:46px;border-radius:14px;background:#e9f4ef;display:grid;place-items:center;font-size:24px}
+    .service h3{margin:14px 0 6px}
+    .service p{color:var(--muted);margin:0}
+    .map-wrap{overflow:hidden;border-radius:22px;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+    iframe{width:100%;height:460px;border:0;display:block}
+    .info-list{display:grid;gap:12px}
+    .info-row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+    .info-row b{color:var(--primary2)}
+    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .news time{font-size:12px;color:var(--primary);font-weight:800}
+    .news h3{margin:8px 0}
+    .news p{color:var(--muted)}
+    .badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#edf6f2;color:var(--primary);font-size:12px;font-weight:800}
+    .cta{background:linear-gradient(135deg,#fff6d9,#fff);border:1px solid #f0dfaa;border-radius:24px;padding:32px}
+    footer{background:#102c24;color:#dcebe5;padding:42px 0 24px}
+    .footer-grid{display:grid;grid-template-columns:1.3fr .7fr .8fr;gap:28px}
+    footer h3{color:#fff}
+    footer a{color:#dcebe5}
+    .copyright{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:#aac0b8}
+    .mobile-toggle{display:none;background:none;border:0;font-size:26px}
+    @media(max-width:900px){
+      .hero-grid,.grid-2,.footer-grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .service-grid,.news-grid{grid-template-columns:1fr 1fr}
+      .menu{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;padding:18px 24px;flex-direction:column;border-bottom:1px solid var(--line)}
+      .menu.open{display:flex}.mobile-toggle{display:block}
+    }
+    @media(max-width:600px){
+      .stats,.service-grid,.news-grid,.quick{grid-template-columns:1fr}
+      .hero-grid{padding:54px 0}.info-row{grid-template-columns:1fr}
+      section{padding:56px 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Portal Informasi Kelurahan Nagritengah</span>
+      <span>Kecamatan Purwakarta · Kabupaten Purwakarta · Jawa Barat</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#beranda">
+          <div class="seal">NT</div>
+          <div>Kelurahan Nagritengah<small>Kecamatan Purwakarta</small></div>
+        </a>
+        <button class="mobile-toggle" aria-label="Buka menu" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+        <div class="menu">
+          <a href="#profil">Profil</a><a href="#data">Data Penduduk</a><a href="#peta">Peta</a>
+          <a href="#layanan">Layanan</a><a href="#informasi">Informasi</a><a href="#kontak">Kontak</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Website Resmi Kelurahan</span>
+          <h1>Nagritengah<br>Purwakarta</h1>
+          <p>Pusat informasi publik, data kependudukan, peta wilayah, layanan administrasi, pengumuman, dan kegiatan masyarakat Kelurahan Nagritengah.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#layanan">Lihat Layanan</a>
+            <a class="btn btn-light" href="#peta">Buka Peta Wilayah</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Data Ringkas Nagritengah</h3>
+          <div class="quick">
+            <div><small>Penduduk 2024</small><b>11.472</b><span>jiwa</span></div>
+            <div><small>Luas Wilayah*</small><b>1,92</b><span>km²</span></div>
+            <div><small>Laki-laki</small><b>5.755</b><span>jiwa</span></div>
+            <div><small>Perempuan</small><b>5.717</b><span>jiwa</span></div>
+          </div>
+          <p style="font-size:12px;margin-bottom:0">*Luas wilayah berdasarkan dataset wilayah Kecamatan Purwakarta tahun 2019. Statistik penduduk utama menggunakan dataset 2024.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="profil">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Profil Kelurahan</div>
+          <h2>Mengenal Kelurahan Nagritengah</h2>
+          <p class="lead">Nagritengah merupakan salah satu kelurahan di Kecamatan Purwakarta, Kabupaten Purwakarta, Provinsi Jawa Barat. Website ini dirancang sebagai pusat informasi yang mudah diakses masyarakat.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Visi Pelayanan</h3>
+            <p>Mewujudkan pelayanan kelurahan yang cepat, transparan, ramah, tertib administrasi, serta berbasis informasi yang mudah diakses masyarakat.</p>
+            <p class="note">Teks visi/misi ini dapat diganti dengan visi dan misi resmi Kelurahan Nagritengah.</p>
+          </div>
+          <div class="card">
+            <h3>Informasi Kantor</h3>
+            <div class="info-list">
+              <div class="info-row"><b>Alamat</b><span>JL. Hidayat Martalogawa No. 16, Kelurahan Nagritengah, Kecamatan Purwakarta, Kabupaten Purwakarta</span></div>
+              <div class="info-row"><b>Telepon</b><span>(0264) 214445</span></div>
+              <div class="info-row"><b>Jam Layanan</b><span>Senin–Jumat, 07.30–15.45 WIB</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="data" style="background:#edf4f0">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Data Kependudukan</div>
+          <h2>Statistik Penduduk</h2>
+          <p class="lead">Ringkasan data membantu masyarakat memahami kondisi demografi Kelurahan Nagritengah secara cepat.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="n">11.472</div><div class="label">Jumlah Penduduk</div></div>
+          <div class="stat"><div class="n">5.755</div><div class="label">Laki-laki</div></div>
+          <div class="stat"><div class="n">5.717</div><div class="label">Perempuan</div></div>
+          <div class="stat"><div class="n">5.975</div><div class="label">Jiwa per km²</div></div>
+        </div>
+        <p class="note">Sumber statistik: Portal Data Kabupaten Purwakarta, dataset penduduk desa/kelurahan Kecamatan Purwakarta, tahun 2024. Angka dapat diperbarui ketika tersedia data administrasi terbaru dari kelurahan.</p>
+      </div>
+    </section>
+
+    <section id="peta">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Peta Wilayah</div>
+          <h2>Lokasi Kelurahan Nagritengah</h2>
+          <p class="lead">Peta interaktif dapat digunakan untuk melihat lokasi kantor dan lingkungan sekitar. Untuk peta batas RW/RT yang presisi, file batas wilayah GeoJSON/KML dapat ditambahkan kemudian.</p>
+        </div>
+        <div class="map-wrap">
+          <iframe loading="lazy" allowfullscreen
+            src="https://www.google.com/maps?q=Kelurahan%20Nagritengah%2C%20Purwakarta%2C%20Jawa%20Barat&output=embed"
+            title="Peta Kelurahan Nagritengah"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan" style="background:#edf4f0">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Pelayanan Publik</div>
+          <h2>Layanan untuk Masyarakat</h2>
+          <p class="lead">Daftar berikut dapat dikembangkan menjadi formulir online, pelacakan surat, dan unduhan persyaratan.</p>
+        </div>
+        <div class="service-grid">
+          <div class="card service"><div class="icon">🪪</div><h3>Administrasi Kependudukan</h3><p>Informasi pengantar KTP, KK, pindah datang, dan dokumen kependudukan lainnya.</p></div>
+          <div class="card service"><div class="icon">📄</div><h3>Surat Keterangan</h3><p>Pengantar atau surat keterangan sesuai kewenangan kelurahan dan ketentuan yang berlaku.</p></div>
+          <div class="card service"><div class="icon">🏠</div><h3>Domisili & Lingkungan</h3><p>Informasi administrasi domisili, lingkungan, RT/RW, dan kebutuhan masyarakat setempat.</p></div>
+          <div class="card service"><div class="icon">🤝</div><h3>Pelayanan Sosial</h3><p>Informasi program sosial, pendataan warga, serta rujukan layanan pemerintah.</p></div>
+          <div class="card service"><div class="icon">📣</div><h3>Pengaduan Masyarakat</h3><p>Kanal penyampaian aspirasi, laporan, dan keluhan pelayanan secara tertib.</p></div>
+          <div class="card service"><div class="icon">📊</div><h3>Data & Informasi Publik</h3><p>Data demografi, profil wilayah, statistik, kegiatan, dan informasi publik kelurahan.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="informasi">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Berita & Pengumuman</div>
+          <h2>Informasi Terbaru</h2>
+          <p class="lead">Contoh area publikasi. Admin website nantinya dapat mengganti isi ini dengan berita, agenda, dan pengumuman resmi.</p>
+        </div>
+        <div class="news-grid">
+          <article class="card news"><span class="badge">Pengumuman</span><time>CONTOH</time><h3>Jadwal Pelayanan Kelurahan</h3><p>Informasi mengenai jam pelayanan dan dokumen yang perlu disiapkan sebelum datang ke kantor kelurahan.</p></article>
+          <article class="card news"><span class="badge">Kegiatan</span><time>CONTOH</time><h3>Agenda Gotong Royong Warga</h3><p>Ruang publikasi kegiatan kebersihan lingkungan, kerja bakti, dan aktivitas kemasyarakatan.</p></article>
+          <article class="card news"><span class="badge">Informasi</span><time>CONTOH</time><h3>Pembaruan Data Penduduk</h3><p>Pengumuman proses pemutakhiran data penduduk agar informasi administratif tetap akurat.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="container">
+        <div class="cta grid-2">
+          <div>
+            <div class="kicker">Hubungi Kelurahan</div>
+            <h2>Butuh informasi pelayanan?</h2>
+            <p>Silakan datang langsung ke kantor Kelurahan Nagritengah atau hubungi nomor kantor pada jam pelayanan.</p>
+          </div>
+          <div class="card">
+            <div class="info-list">
+              <div class="info-row"><b>Telepon</b><span>(0264) 214445</span></div>
+              <div class="info-row"><b>Alamat</b><span>JL. Hidayat Martalogawa No. 16, Kelurahan Nagritengah, Kecamatan Purwakarta, Kabupaten Purwakarta</span></div>
+              <div class="info-row"><b>Email</b><span>Tambahkan email resmi kelurahan</span></div>
+              <div class="info-row"><b>WhatsApp</b><span>Tambahkan nomor layanan resmi</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><h3>Kelurahan Nagritengah</h3><p>Website informasi pelayanan dan publikasi masyarakat Kelurahan Nagritengah, Kecamatan Purwakarta, Kabupaten Purwakarta.</p></div>
+        <div><h3>Menu</h3><p><a href="#profil">Profil</a><br><a href="#data">Data Penduduk</a><br><a href="#peta">Peta Wilayah</a><br><a href="#layanan">Layanan</a></p></div>
+        <div><h3>Catatan</h3><p>Data dan konten website harus diverifikasi oleh administrator kelurahan sebelum dipublikasikan sebagai informasi resmi.</p></div>
+      </div>
+      <div class="copyright">© 2026 Kelurahan Nagritengah · Kecamatan Purwakarta · Kabupaten Purwakarta</div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => {
+      document.querySelector('.menu').classList.remove('open');
+    }));
+  </script>
+</body>
+</html>
